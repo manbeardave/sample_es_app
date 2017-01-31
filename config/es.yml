@@ -1,0 +1,12 @@
+default: &default
+
+development:
+  <<: *default
+  host: 'http://127.0.0.1:9200'
+  log: true
+
+test:
+  <<: *default
+
+production:
+  <<: *default
