@@ -1,11 +1,11 @@
 # Sample Rails App For ES                                           
                                                                                                        
-                                                                                                       
-                                                        `7M'   `MF'.gP"Ya `7Mb,od8 `7M'   `MF'.gP"Ya     
-                                                          VA   ,V ,M'   Yb  MM' "'   VA   ,V ,M'   Yb    
-                                                           VA ,V  8M""""""  MM        VA ,V  8M""""""    
-                                                            VVV   YM.    ,  MM         VVV   YM.    ,    
-                                                             W     `Mbmmd'.JMML.        W     `Mbmmd'                                                                                   
+                                                                            
+                             `7M'   `MF'.gP"Ya `7Mb,od8 `7M'   `MF'.gP"Ya     
+                               VA   ,V ,M'   Yb  MM' "'   VA   ,V ,M'   Yb    
+                                VA ,V  8M""""""  MM        VA ,V  8M""""""    
+                                 VVV   YM.    ,  MM         VVV   YM.    ,    
+                                  W     `Mbmmd'.JMML.        W     `Mbmmd'                                                                                   
 
 ## Getting Started
 
