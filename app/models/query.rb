@@ -12,7 +12,7 @@ class Query < ApplicationRecord
             "location": {
               "relation": "within",
               "indexed_shape": { 
-                "index": "development-polygon",
+                "index": "test-polygon",
                 "type":  "polygon",
                 "id": "#{polygon_es_id_for_query}",
                 "path":  "location"
@@ -23,6 +23,52 @@ class Query < ApplicationRecord
     }
     end
     
+    def geopoint_bounding_box
+      {
+          "query": {
+              "bool": {
+                  "must": {
+                      "match_all": {}
+                  },
+                  "filter": {
+                      "geo_bounding_box": {
+                          "location": {
+                              "top_left": {
+                                  "lat": 34.2355338,
+                                  "lon": -120.4623123
+                              },
+                              "bottom_right": {
+                                  "lat": 32.1503148,
+                                  "lon": -116.3327756
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+    end
+    
+    def geopoint_distance_from_carlsbad
+      {
+          "query": {
+              "bool": {
+                  "must": {
+                      "match_all": {}
+                  },
+                  "filter": {
+                      "geo_distance": {
+                          "distance": "1km",
+                          "location": {
+                            "lat":  33.12557521039472,
+                            "lon": -117.31115965836284
+                          }
+                      }
+                  }
+              }
+          }
+      }
+    end
     
     
   end

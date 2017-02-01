@@ -44,7 +44,7 @@ class GeoshapePoi < ApplicationRecord
       end
       def search_within_polygon(id)
         body     = Query.geoshape_polygon_within_body(id)
-        response = Es.client.search(index: GeoshapePoi.index_name, type: 'geoshape-poi', body: body)
+        response = Es.client.search(index: "#{index_name}", type: 'geoshape-poi', body: body)
       end
     end
   

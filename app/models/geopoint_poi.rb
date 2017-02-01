@@ -41,6 +41,17 @@ class GeopointPoi < ApplicationRecord
       def bulk body
         Es.client.bulk index: index_name, body: body
       end
+      
+      def search_within_boundingbox
+        body     = Query.geopoint_bounding_box
+        response = Es.client.search(index: GeopointPoi.index_name, type: 'geopoint-poi', body: body)
+      end
+      
+      def search_within_two_miles_of_carlsbad
+        body     = Query.geopoint_distance_from_carlsbad
+        response = Es.client.search(index: GeopointPoi.index_name, type: 'geopoint-poi', body: body)
+      end
+      
     end
   
 end

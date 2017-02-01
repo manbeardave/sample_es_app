@@ -12,7 +12,7 @@ RSpec.configure do |config|
     
     geoshape_poi_txt  = File.open(File.join( Rails.root, "spec", "fixtures", "geoshape_poi_bulk.txt")).read.split("/n").collect { |row| row }
     geopoint_poi_txt  = File.open(File.join( Rails.root, "spec", "fixtures", "geopoint_poi_bulk.txt")).read.split("/n").collect { |row| row }
-    polygon_txt       = File.open(File.join( Rails.root, "spec", "fixtures", "polygons_FINAL_bulk.txt")).read.split("/n").collect { |row| row }
+    polygon_txt       = File.open(File.join( Rails.root, "spec", "fixtures", "polygons_test_bulk.txt")).read.split("/n").collect { |row| row }
     Polygon.bulk polygon_txt
     GeoshapePoi.bulk geoshape_poi_txt
     GeopointPoi.bulk geopoint_poi_txt

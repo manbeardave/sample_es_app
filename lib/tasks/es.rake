@@ -22,9 +22,6 @@ namespace :es do
   desc 'put templates'
   task :put_templates => :environment do
     # TODO check to see if it exists
-    # Es::Place.put_template
-    # Es::Device.put_template
-    # Es::Audience.put_template
     GeoshapePoi.put_template
     Polygon.put_template
     GeopointPoi.put_template
@@ -67,20 +64,20 @@ namespace :es do
       end
     end
   end
-  
-  # desc 'create bulk data for nielsen polygons'
- #  task :gen_es_data => :environment do
- #    data  = JSON.parse(File.read(File.join( Rails.root, "spec", "fixtures", "geojson_nielsen_dmas.json")))
- #    data['features'].each_with_index do |x,i|
- #      points = x['geometry']['coordinates']
- #      name   = x['properties']['dma1']
- #      type   = x['geometry']['type']
- #      open(File.join( Rails.root, "spec", "fixtures", "polygons_FINAL_bulk.txt"), 'a') do |f|
- #        f.puts "{\"index\": { \"_type\": \"polygon\", \"_id\": #{i} } }"
- #        f.puts "{\"name\": \"#{name}\", \"location\": { \"type\": \"#{type.downcase}\", \"coordinates\": #{points}}}"
- #      end
- #    end
- #  end
+
+  desc 'create bulk data for nielsen polygons'
+  task :gen_es_data => :environment do
+    data  = JSON.parse(File.read(File.join( Rails.root, "spec", "fixtures", "geojson_nielsen_dmas.json")))
+    data['features'].each_with_index do |x,i|
+      points = x['geometry']['coordinates']
+      name   = x['properties']['dma1']
+      type   = x['geometry']['type']
+      open(File.join( Rails.root, "spec", "fixtures", "polygons_FINAL_bulk.txt"), 'a') do |f|
+        f.puts "{\"index\": { \"_type\": \"polygon\", \"_id\": #{i} } }"
+        f.puts "{\"name\": \"#{name}\", \"location\": { \"type\": \"#{type.downcase}\", \"coordinates\": #{points}}}"
+      end
+    end
+  end
 
 
   desc 'load test data'
