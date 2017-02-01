@@ -31,7 +31,9 @@ Thanks for checking out the repo, heres some guidelines to get you going!
     - with this text below:
     
     `# To support HEAD plugin
+    
       http.cors.enabled: true
+      
       http.cors.allow-origin: "*"`
 
 ## Quickstart
