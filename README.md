@@ -1,18 +1,22 @@
 # Sample Rails App For ES                                           
                                                                                                        
                                                                             
-                             `7M'   `MF'.gP"Ya `7Mb,od8 `7M'   `MF'.gP"Ya     
-                               VA   ,V ,M'   Yb  MM' "'   VA   ,V ,M'   Yb    
-                                VA ,V  8M""""""  MM        VA ,V  8M""""""    
-                                 VVV   YM.    ,  MM         VVV   YM.    ,    
-                                  W     `Mbmmd'.JMML.        W     `Mbmmd'                                                                                   
+                                       `7M'   `MF'.gP"Ya `7Mb,od8 `7M'   `MF'.gP"Ya     
+                                         VA   ,V ,M'   Yb  MM' "'   VA   ,V ,M'   Yb    
+                                          VA ,V  8M""""""  MM        VA ,V  8M""""""    
+                                           VVV   YM.    ,  MM         VVV   YM.    ,    
+                                            W     `Mbmmd'.JMML.        W     `Mbmmd'
+                                  
+                                                                                                                     
 
 ## Getting Started
 
 Thanks for checking out the repo, heres some guidelines to get you going!  
 
 ##  Dependencies 
-  - If you haven't installed Ruby, I'd recommend using RVM.  Find their [install guide here](https://rvm.io/rvm/install)
+  - If you haven't installed Ruby, I'd recommend using RVM - in fact, I'd also recommend using their command to install rails with your version of Ruby.  Find their [install guide here](https://rvm.io/rvm/install)
+  - Additionally if is your first time installing rails, you'll need to install the bundler gem to work with rails - use your CLI like so: 
+  - `gem install bundler` 
   - If you haven't already installed elasticsearch, I'd use brew and follow their instructions: 
     - `brew install elasticsearch`
     
@@ -22,10 +26,12 @@ Thanks for checking out the repo, heres some guidelines to get you going!
     - Run in separate terminal window and then access at localhost:9100 within browser
 
 ## Quickstart
+  
   `bundle install`
+  
   `rspec`
   
-  Assuming you have elasticsearch installed, this will run a simple test suite at localhost:9200 standing up and tearing down a small elasticsearch cluster and fire off 3 sample queries - one geo_shape, two geo_point.  
+  Assuming you have elasticsearch, Ruby, and Rails installed, this will run a simple test suite at localhost:9200 standing up and tearing down a small elasticsearch cluster and fire off 3 sample queries - one geo_shape, two geo_point.  
 
 
 ## Usage
