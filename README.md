@@ -24,14 +24,32 @@ Thanks for checking out the repo, heres some guidelines to get you going!
   - [ElasticSearch Head Plugin](https://github.com/mobz/elasticsearch-head)
     - Not mandatory but super helpful to browse your indexed documents
     - Run in separate terminal window and then access at localhost:9100 within browser
+    - Note that in order to do this, with ES5+, you'll have to edit your brew installation of elasticsearch yml file - located here: 
+    
+    `vim /usr/local/etc/elasticsearch/elasticsearch.yml`
+    
+    - with this text below:
+    
+    `# To support HEAD plugin
+      http.cors.enabled: true
+      http.cors.allow-origin: "*"`
 
 ## Quickstart
+
+  Within your CLI, navigate to the directory of this app, and run: 
   
   `bundle install`
   
+  Assuming you have elasticsearch, Ruby, and Rails installed, this should install all the gem dependencies of the rails app.  The only non-rails default gems I added for this project are:
+  - rspec, my preferred testing suite
+  - elasticsearch, for interfacing with es
+  - pry, my preferred debugging tool
+  
+  after the bundle install is complete, you are ready to run the tests; 
+  
   `rspec`
   
-  Assuming you have elasticsearch, Ruby, and Rails installed, this will run a simple test suite at localhost:9200 standing up and tearing down a small elasticsearch cluster and fire off 3 sample queries - one geo_shape, two geo_point.  
+   This command will run a simple test suite at localhost:9200 standing up and tearing down a small elasticsearch cluster and fire off 3 sample queries - one geo_shape, two geo_point.  
 
 
 ## Usage
