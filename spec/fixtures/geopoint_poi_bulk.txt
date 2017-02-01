@@ -1,0 +1,9 @@
+{ "index" : { "_type" : "geopoint-poi", "_id" : 1 } }
+{ "id": 1, "name": "Verve", "location": { "lon": -117.31115965836284, "lat": 33.12557521039472 }}
+{ "index" : { "_type" : "geopoint-poi", "_id" : 2 } }
+{ "id": 2, "name": "Dave rules, is the coolest", "location": { "lon":-118.31115965836284, "lat": 34.12557521039472 }}
+{ "index" : { "_type" : "geopoint-poi", "_id" : 3 } }
+{ "id": 3, "name": "Des Moines State Cap", "location": { "lon": -93.6187347, "lat":41.5873377 }}
+
+
+

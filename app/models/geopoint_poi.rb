@@ -1,29 +1,29 @@
-class Polygon < ApplicationRecord
+class GeopointPoi < ApplicationRecord
     
     class << self
 
       def index_name
-        "#{Rails.env}-polygon"
+        "#{Rails.env}-geopoint-poi"
       end
 
       def template
         {
           'template' => "#{index_name}*",
           'mappings' => {
-            'polygon' => {
+            'geopoint-poi' => {
               'properties' => {
                 'name' => {
                   'type' => 'string'
                 },
                 'location' => {
-                  'type' => 'geo_shape'
+                  'type' => 'geo_point'
                 }
               }
             }
           }
         }
       end
-     
+
       def put_template
         Es.client.indices.put_template name: "#{index_name}", body: template
       end

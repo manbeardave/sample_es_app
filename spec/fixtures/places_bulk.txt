@@ -1,9 +1,0 @@
-{ "index" : { "_type" : "poi", "_id" : 1 } }
-{ "id": 1, "name": "Verve", "location": { "type": "point", "coordinates": [-117.31115965836284, 33.12557521039472] }}
-{ "index" : { "_type" : "poi", "_id" : 2 } }
-{ "id": 2, "name": "Dave rules, is the coolest", "location": { "type": "point", "coordinates": [-118.31115965836284, 34.12557521039472] }}
-{ "index" : { "_type" : "poi", "_id" : 3 } }
-{ "id": 3, "name": "Des Moines State Cap", "location": { "type": "point", "coordinates": [-93.6187347, 41.5873377] }}
-
-
-

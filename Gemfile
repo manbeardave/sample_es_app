@@ -27,9 +27,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'elasticsearch'
-gem 'elasticsearch-dsl'
-gem 'elasticsearch-model'
 gem 'pry'
+gem 'rspec-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

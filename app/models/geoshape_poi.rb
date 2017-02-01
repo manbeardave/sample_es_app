@@ -1,16 +1,16 @@
-class Poi < ApplicationRecord
+class GeoshapePoi < ApplicationRecord
     
     class << self
 
       def index_name
-        "#{Rails.env}-poi"
+        "#{Rails.env}-geoshape-poi"
       end
 
       def template
         {
           'template' => "#{index_name}*",
           'mappings' => {
-            'poi' => {
+            'geoshape-poi' => {
               'properties' => {
                 'name' => {
                   'type' => 'string'
@@ -41,6 +41,10 @@ class Poi < ApplicationRecord
       # Not to be used in production
       def bulk body
         Es.client.bulk index: index_name, body: body
+      end
+      def search_within_polygon(id)
+        body     = Query.geoshape_polygon_within_body(id)
+        response = Es.client.search(index: GeoshapePoi.index_name, type: 'geoshape-poi', body: body)
       end
     end
   
