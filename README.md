@@ -29,10 +29,9 @@ Thanks for checking out the repo, heres some guidelines to get you going!
     `vim /usr/local/etc/elasticsearch/elasticsearch.yml`
     
     - with this text below:
-    
-    `# To support HEAD plugin\n
-      http.cors.enabled: true\n
-      http.cors.allow-origin: "*"\n`
+  
+    http.cors.enabled: true 
+    http.cors.allow-origin: "*"
 
 ## Quickstart
 
