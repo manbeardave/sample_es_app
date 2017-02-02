@@ -19,6 +19,7 @@ Thanks for checking out the repo, heres some guidelines to get you going!
   - `gem install bundler` 
   - If you haven't already installed elasticsearch, I'd use brew and follow their instructions: 
     - `brew install elasticsearch`
+    - after you install elasticsearch, make sure it is running either in the background or in a terminal window! This will run at localhost:9200 and it is where the app will be posting templates, mapping, and documents! 
     
 ## Tools 
   - [ElasticSearch Head Plugin](https://github.com/mobz/elasticsearch-head)
@@ -30,8 +31,8 @@ Thanks for checking out the repo, heres some guidelines to get you going!
     
     - with this text below:
   
-    http.cors.enabled: true 
-    http.cors.allow-origin: "*"
+  `http.cors.enabled: true 
+   http.cors.allow-origin: "*"`
 
 ## Quickstart
 
@@ -46,10 +47,9 @@ Thanks for checking out the repo, heres some guidelines to get you going!
   
   after the bundle install is complete, you are ready to run the tests; 
   
-  `rspec`
+  `RAILS_ENV=test rspec`
   
-   This command will run a simple test suite at localhost:9200 standing up and tearing down a small elasticsearch cluster and fire off 3 sample queries - one geo_shape, two geo_point.  
-
+   This command will run a simple test suite which stands up 3 indexes at localhost:9200, runs a single test, and then tears down the instance.  This will happen for every test in each spec file you have marked with elasticsearch:true.  So for example, we have 3 tests - for each test, we are creating a completely clean index.  
 
 ## Usage
 
